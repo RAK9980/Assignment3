@@ -1,0 +1,79 @@
+<%- include ../Partials/head.ejs %>
+<%- include ../Partials/main_nav.ejs %>
+
+<!--Content for Add Page-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="post">
+
+                <div class="form-group">
+                <label for="nameTextField">Customer Name</label>
+                <input type="text" Class="form-control"
+                id = "nameTextField"
+                placeholder = "Enter Customer Name"
+                name="name" required>
+                </div>
+                
+                <div class="form-group">
+                <label for="numberTextField">Order Number</label>
+                <input type="text" Class="form-control"
+                id = "orderTextField"
+                placeholder = "Enter Order Number"
+                name="orderNumber" required>
+                </div>
+                
+                <div class="form-group">
+                <label for="phoneTextField">Phone #</label>
+                <input type="number" Class="form-control"
+                id = "phoneTextField"
+                placeholder = "Enter Customer Phone#"
+                name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                <label for="dateTextField">Order Date</label>
+                <input type="text" Class="form-control"
+                id = "dateTextField"
+                placeholder = "Enter date of Order"
+                name="orderDate" required>
+                </div>
+
+                <div class="form-group">
+                <label for="statusTextField">Order Status</label>
+                <input type="text" Class="form-control"
+                id = "statusTextField"
+                placeholder = "Enter status of Order"
+                name="status" required>
+                </div>
+
+                <div class="form-group">
+                <label for="infoTextField">Order Info</label>
+                <input type="textarea" Class="form-control"
+                id = "infoTextField"
+                placeholder = "Enter detail of Order"
+                name="orderInfo" required>
+                </div>
+
+                <div class="form-group">
+                <label for="collectionTextField">Order Collection</label>
+                <input type="text" Class="form-control"
+                id = "collectionTextField"
+                placeholder = "Pick up/Delivery?"
+                name="orderCollection" required>
+                </div>
+                <br>
+                <button class="button.btn.btn-primary" type="submit">
+                <i class="fas fa-edit"></i> Submit
+                </button>
+
+                <a href="/book-list" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ../Partials/btm_nav.ejs %>
+<%- include ../Partials/footer.ejs %>

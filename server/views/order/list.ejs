@@ -1,0 +1,55 @@
+<%- include ../Partials/head.ejs %>
+<%- include ../Partials/main_nav.ejs %>
+
+<main>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-offset-3 col-md-8">
+    <h1><%= title %></h1>
+    <a href="/order-data/add" class="btn btn-primary" role="button">
+      <i class="fas fa-plus-circle"></i> Add an Order
+    </a>
+    <br>
+    <br>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">Order Number</th>
+    <th class="text-center">Phone</th>
+    <th class="text-center">Order Date</th>
+    <th class="text-center">Status</th>
+    <th class="text-center">Order Info</th>
+    <th class="text-center">Order Collection</th>
+    <th class="text-center"></th>
+    <th class="text-center"></th>
+    </tr>
+    <!-- repeat the template -->
+    <% for(let count=0; count<Orderdata.length; count++) { %>
+        <tr>
+        <td class="text-center"><%= Orderdata[count].name %></td>
+        <td class="text-center"><%= Orderdata[count].orderNumber %></td>
+        <td class="text-center"><%= Orderdata[count].phone %></td>
+        <td class="text-center"><%= Orderdata[count].orderDate %></td>
+        <td class="text-center"><%= Orderdata[count].Status %></td>
+        <td class="text-center"><%= Orderdata[count].orderInfo %></td>
+        <td class="text-center"><%= Orderdata[count].orderCollection %></td>
+        <td class="text-center">
+          <a href="/order-data/edit/<%= Orderdata[count]._id %>"
+          class="btn btn-primary">
+          <i class="fsa fa-pencil-alt"></i> Edit </a>
+        </td>
+        <td class="text-center">
+          <a href="/order-data/delete/<%= Orderdata[count]._id %>"
+          class="btn btn-danger">
+          <i class="fsa fa-trash-alt"></i> Delete </a>
+        </td>
+        </tr>
+    <% } %>
+    </table>
+    </div>
+    </div>
+  </div>
+</main>
+
+<%- include ../Partials/btm_nav.ejs %>
+<%- include ../Partials/footer.ejs %>
